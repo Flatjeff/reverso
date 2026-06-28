@@ -789,7 +789,9 @@ async function fetchTTSBuffer(word) {
   });
 
   if (!response.ok) {
-    throw new Error(`TTS endpoint error: ${response.status}`);
+    let detail = '';
+    try { detail = await response.text(); } catch(e) {}
+    throw new Error(`TTS endpoint error: ${response.status} — ${detail}`);
   }
 
   const arrayBuffer = await response.arrayBuffer();

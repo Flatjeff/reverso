@@ -35,7 +35,7 @@ export default async (req: Request, context: Context) => {
     });
   }
 
-  const voiceId = "XB0fDUnXU5powFXDhCwa"; // Charlotte — voix féminine multilingue
+  const voiceId = "21m00Tcm4TlvDq8ikWAM"; // Rachel — voix pré-installée garantie, multilingue
 
   const ttsResponse = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
